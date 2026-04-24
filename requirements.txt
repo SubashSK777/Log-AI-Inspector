@@ -1,4 +1,10 @@
+# Core UI & visualisation
 streamlit>=1.32.0
-torch>=2.2.0
 pandas>=2.1.0
 plotly>=5.19.0
+numpy>=1.26.0
+
+# PyTorch — CPU-only wheel keeps the slug under Streamlit Cloud's memory limit.
+# The --index-url flag is NOT supported in requirements.txt on Streamlit Cloud,
+# so we use the plain package name; Streamlit Cloud installs the CPU build by default.
+torch>=2.2.0

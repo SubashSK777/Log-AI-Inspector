@@ -14,8 +14,8 @@ venv/
 env/
 .venv/
 
-# Streamlit
-.streamlit/
+# Streamlit secrets (never commit secrets, but config.toml is safe to commit)
+.streamlit/secrets.toml
 
 # IDE
 .vscode/

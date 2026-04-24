@@ -9,6 +9,10 @@ import plotly.graph_objects as go
 import plotly.express as px
 import numpy as np
 import time
+from pathlib import Path
+
+# Resolve the directory this script lives in — works locally and on Streamlit Cloud
+_HERE = Path(__file__).parent
 
 from model import LogModel
 from utils import preprocess_logs, VOCAB_SIZE, WINDOW_SIZE
@@ -212,9 +216,9 @@ if not uploaded:
     with col_r:
         demo_btn = st.button("🚀 Load Demo Logs", use_container_width=True)
     if demo_btn:
+        sample_path = _HERE / "sample_logs.txt"
         try:
-            with open("sample_logs.txt", "r") as f:
-                raw_lines = f.read().split("\n")
+            raw_lines = sample_path.read_text(errors="replace").split("\n")
             st.session_state["demo_lines"] = raw_lines
         except FileNotFoundError:
             st.error("`sample_logs.txt` not found — please upload a file manually.")
