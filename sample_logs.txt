@@ -1,0 +1,90 @@
+INFO  2024-01-15 08:00:01 NameNode started successfully
+INFO  2024-01-15 08:00:02 DataNode registered: node-01 (10.0.0.1)
+INFO  2024-01-15 08:00:03 DataNode registered: node-02 (10.0.0.2)
+INFO  2024-01-15 08:00:04 DataNode registered: node-03 (10.0.0.3)
+INFO  2024-01-15 08:00:05 Heartbeat received from node-01
+INFO  2024-01-15 08:00:06 Heartbeat received from node-02
+INFO  2024-01-15 08:00:07 Block blk_10001 allocated on node-01
+INFO  2024-01-15 08:00:08 Block blk_10001 replication started
+INFO  2024-01-15 08:00:09 Block blk_10001 replicated to node-02
+INFO  2024-01-15 08:00:10 Block blk_10001 replicated to node-03
+INFO  2024-01-15 08:01:01 Read request for blk_10001 from client 10.1.1.50
+INFO  2024-01-15 08:01:02 Block blk_10001 served successfully (128 MB)
+INFO  2024-01-15 08:01:03 Heartbeat received from node-03
+INFO  2024-01-15 08:01:04 Block blk_10002 allocated on node-02
+INFO  2024-01-15 08:01:05 Write pipeline established for blk_10002
+INFO  2024-01-15 08:01:06 Chunk 1/8 written to blk_10002
+INFO  2024-01-15 08:01:07 Chunk 2/8 written to blk_10002
+INFO  2024-01-15 08:01:08 Chunk 3/8 written to blk_10002
+INFO  2024-01-15 08:01:09 Chunk 4/8 written to blk_10002
+INFO  2024-01-15 08:01:10 Chunk 5/8 written to blk_10002
+WARN  2024-01-15 08:02:01 Slow disk I/O detected on node-02 (latency: 850ms)
+WARN  2024-01-15 08:02:02 Packet retransmit for blk_10002 chunk 6/8
+ERROR 2024-01-15 08:02:03 Write failure on blk_10002 — disk quota exceeded on node-02
+ERROR 2024-01-15 08:02:04 Pipeline broken for blk_10002 — aborting write
+ERROR 2024-01-15 08:02:05 DataNode node-02 reported DISK_ERROR (code 5)
+WARN  2024-01-15 08:02:06 Initiating block recovery for blk_10002
+INFO  2024-01-15 08:02:07 Block blk_10002 recovery assigned to node-03
+INFO  2024-01-15 08:02:08 Block blk_10002 recovered successfully on node-03
+INFO  2024-01-15 08:02:09 DataNode node-02 removed from active pool
+INFO  2024-01-15 08:02:10 Rebalancing triggered: 2 active nodes remaining
+INFO  2024-01-15 08:03:01 Heartbeat received from node-01
+INFO  2024-01-15 08:03:02 Heartbeat received from node-03
+INFO  2024-01-15 08:03:03 Block blk_10003 allocated on node-01
+INFO  2024-01-15 08:03:04 Write pipeline established for blk_10003
+INFO  2024-01-15 08:03:05 Chunk 1/4 written to blk_10003
+INFO  2024-01-15 08:03:06 Chunk 2/4 written to blk_10003
+INFO  2024-01-15 08:03:07 Chunk 3/4 written to blk_10003
+INFO  2024-01-15 08:03:08 Chunk 4/4 written to blk_10003
+INFO  2024-01-15 08:03:09 Block blk_10003 finalized on node-01, node-03
+INFO  2024-01-15 08:03:10 Checkpoint saved — 3 blocks active
+ERROR 2024-01-15 08:04:01 Connection timeout to node-01 after 30000ms
+ERROR 2024-01-15 08:04:02 Heartbeat missed for node-01 — marking as STALE
+ERROR 2024-01-15 08:04:03 DataNode node-01 declared DEAD — no heartbeat in 90s
+ERROR 2024-01-15 08:04:04 Under-replicated block blk_10001 detected (1 replica remaining)
+ERROR 2024-01-15 08:04:05 Under-replicated block blk_10003 detected (1 replica remaining)
+WARN  2024-01-15 08:04:06 Emergency replication started for blk_10001
+WARN  2024-01-15 08:04:07 Emergency replication started for blk_10003
+INFO  2024-01-15 08:04:08 Spawning new DataNode replica on node-04 (10.0.0.4)
+INFO  2024-01-15 08:04:09 Block blk_10001 replicated to node-04
+INFO  2024-01-15 08:04:10 Block blk_10003 replicated to node-04
+INFO  2024-01-15 08:05:01 System operating in degraded mode (2 nodes active)
+INFO  2024-01-15 08:05:02 DataNode node-04 fully registered
+INFO  2024-01-15 08:05:03 Replication factor restored for all blocks
+INFO  2024-01-15 08:05:04 Heartbeat received from node-03
+INFO  2024-01-15 08:05:05 Heartbeat received from node-04
+INFO  2024-01-15 08:05:06 Block blk_10004 allocated on node-03
+INFO  2024-01-15 08:05:07 Write pipeline established for blk_10004
+INFO  2024-01-15 08:05:08 Chunk 1/6 written to blk_10004
+INFO  2024-01-15 08:05:09 Chunk 2/6 written to blk_10004
+INFO  2024-01-15 08:05:10 Chunk 3/6 written to blk_10004
+INFO  2024-01-15 08:06:01 Chunk 4/6 written to blk_10004
+INFO  2024-01-15 08:06:02 Chunk 5/6 written to blk_10004
+INFO  2024-01-15 08:06:03 Chunk 6/6 written to blk_10004
+INFO  2024-01-15 08:06:04 Block blk_10004 finalized successfully
+INFO  2024-01-15 08:06:05 Cache hit ratio: 94.2%
+INFO  2024-01-15 08:06:06 Compaction complete on node-03
+INFO  2024-01-15 08:06:07 Block blk_10005 allocated on node-04
+INFO  2024-01-15 08:06:08 Write pipeline established for blk_10005
+INFO  2024-01-15 08:06:09 Chunk 1/3 written to blk_10005
+INFO  2024-01-15 08:06:10 Chunk 2/3 written to blk_10005
+WARN  2024-01-15 08:07:01 Memory pressure detected on node-04 (heap: 89%)
+ERROR 2024-01-15 08:07:02 Out-of-memory error on node-04 — write aborted for blk_10005
+ERROR 2024-01-15 08:07:03 JVM crash detected on node-04 — process killed
+ERROR 2024-01-15 08:07:04 DataNode node-04 unresponsive — initiating failover
+WARN  2024-01-15 08:07:05 Failover in progress — service degraded
+INFO  2024-01-15 08:07:06 node-04 restarted with reduced heap allocation
+INFO  2024-01-15 08:07:07 Block blk_10005 write retried on node-03
+INFO  2024-01-15 08:07:08 Chunk 3/3 written to blk_10005 on node-03
+INFO  2024-01-15 08:07:09 Block blk_10005 finalized on node-03
+INFO  2024-01-15 08:07:10 System stability restored — all nodes healthy
+INFO  2024-01-15 08:08:01 Scheduled maintenance window started
+INFO  2024-01-15 08:08:02 Rolling restart initiated for cluster
+INFO  2024-01-15 08:08:03 node-03 safely drained — 0 active leases
+INFO  2024-01-15 08:08:04 node-03 restarted (version 3.3.4 → 3.3.5)
+INFO  2024-01-15 08:08:05 node-03 rejoined cluster at 08:08:05
+INFO  2024-01-15 08:08:06 node-04 safely drained — 0 active leases
+INFO  2024-01-15 08:08:07 node-04 restarted (version 3.3.4 → 3.3.5)
+INFO  2024-01-15 08:08:08 node-04 rejoined cluster at 08:08:08
+INFO  2024-01-15 08:08:09 Maintenance window complete — all nodes on v3.3.5
+INFO  2024-01-15 08:08:10 Cluster health check passed — status: HEALTHY
