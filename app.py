@@ -430,7 +430,7 @@ fig_heat = go.Figure(go.Heatmap(
     colorscale=[[0, "#0a0f1e"], [0.5, "#1e3a5f"], [1, "#ef4444"]],
     hovertemplate="Seq %{y}, Line %{x}<br>Attention: %{z:.3f}<extra></extra>",
     showscale=True,
-    colorbar=dict(title="Attention", tickfont=dict(color="#94a3b8"), titlefont=dict(color="#94a3b8")),
+    colorbar=dict(title="Attention", tickfont=dict(color="#94a3b8"), title_font=dict(color="#94a3b8")),
 ))
 fig_heat.update_layout(
     height=250,
